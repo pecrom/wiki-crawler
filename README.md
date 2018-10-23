@@ -22,7 +22,7 @@ mvn compile
 mvn flyway:migrate
 ``` 
 
-Now we have prepared everything needed by our appilcation, so it's to me create **jar** and test it.
+Now we have prepared everything needed by our appilcation, so it's time to create **jar** and test it.
 
 ```
 mvn package
