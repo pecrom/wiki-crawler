@@ -11,7 +11,7 @@
         <property name="connection.pool_size">1</property>
         <!-- Log SQL queries -->
         <property name="format_sql">true</property>
-        <property name="use_sql_comments">true</property>
+        <property name="use_sql_comments">false</property>
         <!-- MAPPINGS -->
         <mapping class="pecek.roman.interview.crawler.dao.model.ArticleImage"/>
     </session-factory>

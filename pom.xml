@@ -7,6 +7,7 @@
     <groupId>pecek.roman.interview</groupId>
     <artifactId>wiki-crawler</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -21,6 +22,7 @@
         <version.junit-jupiter-engine>5.3.1</version.junit-jupiter-engine>
         <version.mockito-core>2.23.0</version.mockito-core>
         <version.flyway-maven-plugin>5.2.0</version.flyway-maven-plugin>
+        <version.maven-jar-plugin>3.1.0</version.maven-jar-plugin>
     </properties>
 
     <dependencies>
@@ -98,6 +100,33 @@
                         <version>${version.postgresql}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${version.maven-jar-plugin}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>pecek.roman.interview.Crawler</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
